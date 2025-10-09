@@ -125,7 +125,7 @@ function(C, A) // cmd:"cmd"
 		"\n║ #`Nupdate`: `V<{`obj or obj containing MongoDB update operator`V}>`"+
 		"\n║ #`Nconfirm`: `Vtrue`"+
 		"\n║"+
-		"\n╠`V\"specifications\"` `v[specs/sp]` - Specifications of the database"+
+		"\n╠`V\"specifications\"` `v[specs]` - Specifications of the database"+
 		"\n║"+
 		"\n║`V\"nuke\"` `w(DO NOT USE)` - Deletes everything in the database \\(º^º)/"+
 		"\n╚ #`Nconfirm`:`Vtrue`"//+
@@ -268,9 +268,9 @@ function(C, A) // cmd:"cmd"
 
 
 
-	function help(pag){
-		return {ok:false, msg:"Not implemented yet."}
-	}
+	//function help(pag){
+	//	return {ok:false, msg:"Not implemented yet."}
+	//}
 
 	
 	
@@ -303,7 +303,6 @@ function(C, A) // cmd:"cmd"
 			
 			case "specifications":
 			case "specs":
-			case "sp":
 				return specsInfo()
 
 			case "nuke":
@@ -322,9 +321,9 @@ function(C, A) // cmd:"cmd"
 		if(!A || A == {}){
 			return HOW_TO_USE
 		}
-		if(L.is_num(A.help)){
-			return help(A.help)
-		}
+		//if(L.is_num(A.help)){
+		//	return help(A.help)
+		//}
 
 		return commands()
 
