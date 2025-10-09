@@ -209,8 +209,8 @@ function(C, A) // cmd:"cmd"
 
 
 
-	function remove(query){
-		if(!L.is_obj(query) || query == {}){
+	function remove(){
+		if(!L.is_obj(A.query) || A.query == {}){
 			return {ok:false, msg:"Invalid `Nquery`."}
 		}
 
@@ -287,7 +287,7 @@ function(C, A) // cmd:"cmd"
 			case "remove":
 			case "rm":
 			case "r":
-				return remove(A.query)
+				return remove()
 
 			case "update":
 			case "u":
