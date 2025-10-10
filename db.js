@@ -85,15 +85,15 @@ function(C, A) // cmd:"cmd"
 		"\n#`Ncmd`:"+
 		"\n╠`V\"find\"` `v[f]` - Finds an object in the database"+
 		"\n║ #`Nquery`: `V<{`obj`V}>`"+
-		"\n║ #`Nmethod`:"+
+		"\n║ #`Nmethod`: (default:\"array\")"+
 		"\n║ ╠`V\"first\"` `v[f]` - Returns the first matching document"+
 		"\n║ ║ #`Nprojection`: optional `V<{`obj`V}>`"+
-		"\n║ ║ #`Nskip`: optional `V<`int`V>` (defualt:0)"+
+		"\n║ ║ #`Nskip`: optional `V<`int`V>` (default:0)"+
 		"\n║ ║ #`Nsort`: optional `V<{`obj`V}>`"+
 		"\n║ ║"+
 		"\n║ ╠`V\"array\"` `v[a]` - Returns all matching documents"+
 		"\n║ ║ #`Nprojection`: optional `V<{`obj`V}>`"+
-		"\n║ ║ #`Nskip`: optional `V<`int`V>` (defualt:0)"+
+		"\n║ ║ #`Nskip`: optional `V<`int`V>` (default:0)"+
 		"\n║ ║ #`Nlimit`: optional `V<`int`V>` (default:10)"+
 		"\n║ ║ #`Nsort`: optional `V<{`obj`V}>`"+
 		"\n║ ║"+
