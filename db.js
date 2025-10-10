@@ -142,7 +142,7 @@ function(C, A) // cmd:"cmd"
 	}
 
 	function findArray(skip, limit, sort){
-		#db.f(A.query, A.projection).skip(skip).limit(limit).sort(sort).array()
+		return #db.f(A.query, A.projection).skip(skip).limit(limit).sort(sort).array()
 	}
 		
 	function find(){
