@@ -127,7 +127,7 @@ function(C, A) // cmd:"cmd"
 		"\n║"+
 		"\n╠`V\"specifications\"` `v[specs]` - Specifications of the database"+
 		"\n║"+
-		"\n║`V\"nuke\"` `w(DO NOT USE)` - Deletes everything in the database \\(º^º)/"+
+		"\n║`V\"nuke\"` `w(DO NOT USE)` - Deletes everything in the database \\(T^T)/"+
 		"\n╚ #`Nconfirm`:`Vtrue`"//+
 		//"\n"+
 		//"\n#`N\help\`: `V<`pag`V>`/0 - Not Implemented"
