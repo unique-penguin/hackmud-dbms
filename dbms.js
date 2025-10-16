@@ -48,15 +48,15 @@ function(C, A) // cmd:"cmd"
 		}
 
 	function specsInfo(){
-		var dir_arr = #db.f({}).distinct("dir")
+		var dir_arr = #db.f({}).distinct("collection")
 		var specs = {
 			n_documents: #db.f({}).count() // number of documents
 		}
 		
 		for(let i in dir_arr){
-			var subdir_arr = #db.f({dir: dir_arr[i]}).distinct("subdir")
+			var subdir_arr = #db.f({collection: dir_arr[i]}).distinct("subdir")
 
-			specs[dir_arr[i]] = {total: #db.f({dir: dir_arr[i]}).count()}
+			specs[dir_arr[i]] = {total: #db.f({collection: dir_arr[i]}).count()}
 
 			for(let e in subdir_arr){
 				specs[dir_arr[i]][subdir_arr[e]] = #db.f({dir: dir_arr[i], subdir: subdir_arr[e]}).count()
