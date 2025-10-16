@@ -154,10 +154,6 @@ function(C, A) // cmd:"cmd"
 			return {ok:false, msg:"Invalid `Nquery`"}
 		}
 
-		if(!A.method){
-			return findArray(skip, limit, sort)
-		}
-
 		if(L.is_num(A.skip)){
 			skip = A.skip
 		}
@@ -168,6 +164,10 @@ function(C, A) // cmd:"cmd"
 		
 		if(L.is_obj(A.sort) && A.sort != {}){
 			sort = A.sort
+		}
+
+		if(!A.method){
+			return findArray(skip, limit, sort)
 		}
 
 		switch(A.method){
