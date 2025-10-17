@@ -1,40 +1,5 @@
 function(C, A) // cmd:"cmd"
 {	
-	// --------------------------------------------------------------------------------------------------------------
-	// |Oraganization of the Database
-	// |	Directory 			(dir)
-	// |		SubDirectory 	(subdir)
-	// |			Document 	(doc)
-	// |-------------------------------------------------------------------------------------------------------------
-	// | Script Arguments
-	// |	- cmd (command):
-	// |		- add				
-	// |			- costum: true
-	// |				- doc
-	// |				- confirm: true/false
-	// |			- costum: false
-	// |				- source: market
-	// |					- query
-	// |				- source: inventory
-	// |		- remove			
-	// |			- query
-	// |				- confirm: true/false
-	// |		- update			
-	// |			- query
-	// |				- update
-	// |					- confirm: true/false
-	// |		- show				
-	// |			- query
-	// |		- specifications	
-	// --------------------------------------------------------------------------------------------------------------
-	// | Information
-	// | 	Each add-source should have a unique function
-	// |		- This is needed for speed, trying to make a function to work with multiple 
-	// |		cases can make this very slow, so formatToDB and addToDB need to be joined together(?)
-	// |		and make unique for each source type.
-	// | 		
-	// | 		
-
 	const L = #fs.scripts.lib()
 
 		function log(info, text){
@@ -46,35 +11,6 @@ function(C, A) // cmd:"cmd"
 			var time = ("000" + (Date.now()-_ST)).slice(-4)
 			#D("(debug) `K|` "+time+"`Ams` `K|` `3[`"+info+"`3]` `K|` "+text)
 		}
-
-	function specsInfo(){
-		var dir_arr = #db.f({}).distinct("collection")
-		var specs = {
-			n_documents: #db.f({}).count() // number of documents
-		}
-		
-		for(let i in dir_arr){
-			var subdir_arr = #db.f({collection: dir_arr[i]}).distinct("subdir")
-
-			specs[dir_arr[i]] = {total: #db.f({collection: dir_arr[i]}).count()}
-
-			for(let e in subdir_arr){
-				specs[dir_arr[i]][subdir_arr[e]] = #db.f({dir: dir_arr[i], subdir: subdir_arr[e]}).count()
-			}
-		}
-		
-		// Expected Result
-		//{
-		//	n_documents: 100
-		//	raw_data:{
-		//		total: 100
-		//		upgrade: 50
-		//		loc: 50
-		//	}
-		//}
-
-		return specs
-	}
 
 
 
@@ -131,6 +67,7 @@ function(C, A) // cmd:"cmd"
 		"\n╚ #`Nconfirm`:`Vtrue`"//+
 		//"\n"+
 		//"\n#`N\help\`: `V<`pag`V>`/0 - Not Implemented"
+
 
 
 	function findDistinct(){
@@ -253,13 +190,33 @@ function(C, A) // cmd:"cmd"
 
 
 
+	function specifications(){
+		var specifications = {
+			n_documents: #db.f({}).count(),
+			collections: #db.f({}).distinct("collection")
+		}
+
+		specifications.collections.forEach((element, index, array) => {
+			array[index] = {
+				name: element,
+				n_documents: #db.f({collection: element}).count()
+			}
+		})
+
+		return specifications
+	}
+
+
+
 	function nuke(){
 		if(!A.confirm === true){
 			return {ok:false, msg:"Operation not `Nconfirm``ned`."}
 		}
 
-		if(!A.security_message === "Delete everything in my database"){
-			var warning = "- You are about to `Ddelete ALL documents`!\n- I you know what you are doing type:\nsecurity_message: \"Delete everything in my database\""
+		if(A.security_message !== "Delete everything in my database"){
+			var warning = "- You are about to `Ddelete ALL documents`!\n"+
+			"- I you know what you are doing type:\nsecurity_message: \"Delete everything in my database\""
+
 			return {ok:false, msg:warning}
 		}
 
@@ -303,7 +260,7 @@ function(C, A) // cmd:"cmd"
 			
 			case "specifications":
 			case "specs":
-				return specsInfo()
+				return specifications()
 
 			case "nuke":
 				return nuke()
@@ -318,7 +275,7 @@ function(C, A) // cmd:"cmd"
 	// Order of execution and debug text ----------------------------------------------------------------------------
 	try{
 
-		if(!A || A == {}){
+		if((!A) || A == {}){
 			return HOW_TO_USE
 		}
 		//if(L.is_num(A.help)){
