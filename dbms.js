@@ -2,11 +2,6 @@ function(C, A) // cmd:"cmd"
 {	
 	const L = #fs.scripts.lib()
 
-		function log(info, text){
-			var time = ("000" + (Date.now()-_ST)).slice(-4)
-			L.log("`K|` "+time+"`Ams` `K|` `3[`"+info+"`3]` `K|` "+text)
-		}
-
 		function debug(info, text){
 			var time = ("000" + (Date.now()-_ST)).slice(-4)
 			#D("(debug) `K|` "+time+"`Ams` `K|` `3[`"+info+"`3]` `K|` "+text)
