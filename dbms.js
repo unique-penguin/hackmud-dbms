@@ -15,12 +15,12 @@ function(C, A) // cmd:"cmd"
 
 
 	var HOW_TO_USE = ""+
-		"Database Management [v2.0.0]"+
+		"Database Management Script [v2.0.0]"+
 		"\n"+
 		"\nScript Arguments:"+
 		"\n#`Ncmd`:"+
 		"\n╠`V\"find\"` `v[f]` - Finds an object in the database"+
-		"\n║ #`Nquery`: `V<{`obj`V}>`"+
+		"\n║ #`Nquery`: optional `V<{`obj`V}>` (default:{})"+
 		"\n║ #`Nmethod`: (default:\"array\")"+
 		"\n║ ╠`V\"first\"` `v[f]` - Returns the first matching document"+
 		"\n║ ║ #`Nprojection`: optional `V<{`obj`V}>`"+
@@ -42,7 +42,7 @@ function(C, A) // cmd:"cmd"
 		"\n║ #`Ndoc`: `V<{`obj`V}>` or `V<[`arr of objs`V]>`"+
 		"\n║ #`Nconfirm`: `Vtrue`"+
 		"\n║"+
-		"\n╠`V\"remove\"` `v[rm/r]` - Removes document(s) from the database"+
+		"\n╠`V\"remove\"` `v[r]` - Removes document(s) from the database"+
 		"\n║ #`Nquery`: `V<{`obj`V}>`"+
 		"\n║ #`Nconfirm`: `Vtrue`"+
 		"\n║"+
@@ -64,9 +64,8 @@ function(C, A) // cmd:"cmd"
 		"\n╠`V\"specifications\"` `v[specs]` - Specifications of the database"+
 		"\n║"+
 		"\n║`V\"nuke\"` `w(DO NOT USE)` - Deletes everything in the database \\(T^T)/"+
-		"\n╚ #`Nconfirm`:`Vtrue`"//+
-		//"\n"+
-		//"\n#`N\help\`: `V<`pag`V>`/0 - Not Implemented"
+		"\n╚ #`Nconfirm`:`Vtrue`"+
+		"\n Dependencies: `E#fs.scripts.lib()`"
 
 
 
@@ -86,9 +85,10 @@ function(C, A) // cmd:"cmd"
 		var skip = 0
 		var limit = 10
 		var sort = {}
+		var query = {}
 
-		if(!L.is_obj(A.query)){
-			return {ok:false, msg:"Invalid `Nquery`"}
+		if(L.is_obj(A.query)){
+			query = A.query
 		}
 
 		if(L.is_num(A.skip)){
@@ -242,7 +242,6 @@ function(C, A) // cmd:"cmd"
 				return insert()
 
 			case "remove":
-			case "rm":
 			case "r":
 				return remove()
 
@@ -274,13 +273,9 @@ function(C, A) // cmd:"cmd"
 
 	// Order of execution and debug text ----------------------------------------------------------------------------
 	try{
-
 		if((!A) || A == {}){
 			return HOW_TO_USE
 		}
-		//if(L.is_num(A.help)){
-		//	return help(A.help)
-		//}
 
 		return commands()
 
