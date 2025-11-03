@@ -15,7 +15,7 @@ function(C, A) // cmd:"cmd"
 		"\nScript Arguments:"+
 		"\n#`Ncmd`:"+
 		"\n╠`V\"find\"` `v[f]` - Finds an object in the database"+
-		"\n║ #`Nquery`: optional `V<{`obj`V}>` (default:{})"+
+		"\n║ #`Nquery`: `V<{`obj`V}>` (default:{} only in find)"+
 		"\n║ #`Nmethod`: (default:\"array\")"+
 		"\n║ ╠`V\"first\"` `v[f]` - Returns the first matching document"+
 		"\n║ ║ #`Nprojection`: optional `V<{`obj`V}>`"+
@@ -60,7 +60,7 @@ function(C, A) // cmd:"cmd"
 		"\n║"+
 		"\n║`V\"nuke\"` `w(DO NOT USE)` - Deletes everything in the database \\(T^T)/"+
 		"\n╚ #`Nconfirm`:`Vtrue`"+
-		"\n Dependencies: `E#fs.scripts.lib()`"
+		"\n Dependencies: `Escripts.lib`"
 
 
 
@@ -72,8 +72,8 @@ function(C, A) // cmd:"cmd"
 		return #db.f(A.query).distinct(A.key)
 	}
 
-	function findArray(skip, limit, sort){
-		return #db.f(A.query, A.projection).skip(skip).limit(limit).sort(sort).array()
+	function findArray(query, skip, limit, sort){
+		return #db.f(query, A.projection).skip(skip).limit(limit).sort(sort).array()
 	}
 		
 	function find(){
@@ -99,21 +99,21 @@ function(C, A) // cmd:"cmd"
 		}
 
 		if(!A.method){
-			return findArray(skip, limit, sort)
+			return findArray(query, skip, limit, sort)
 		}
 
 		switch(A.method){
 			case "first":
 			case "f":
-				return #db.f(A.query, A.projection).skip(skip).sort(sort).first()
+				return #db.f(query, A.projection).skip(skip).sort(sort).first()
 
 			case "array":
 			case "a":
-				return findArray(skip, limit, sort)
+				return findArray(query, skip, limit, sort)
 
 			case "count":
 			case "c":
-				return #db.f(A.query).count()
+				return #db.f(query).count()
 
 			case "distinct":
 			case "d":
