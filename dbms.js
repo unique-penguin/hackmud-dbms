@@ -33,7 +33,7 @@ function(C, A) // cmd:"cmd"
 		"\n║ #`Nconfirm`: `Vtrue`"+
 		"\n║"+
 		"\n╠`V\"update\"` `v[u]` - Updates documents in the database"+
-		"\n╠`V\"update1\"` `v[u1]` - Updates a single document in the database."+
+		"\n╠`V\"update1\"` `v[u1]` - Updates a single document in the database"+
 		"\n╠`V\"updateS\"` `v[uS]` - Updates documents in the database, if they exist. Inserts the document if it doesn't exist"+
 		"\n║ #`Nquery`: `V<{`obj`V}>`"+
 		"\n║ #`Nupdate`: `V<{`obj/MongoDB obj`V}>`"+
