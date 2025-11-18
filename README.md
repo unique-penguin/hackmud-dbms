@@ -17,7 +17,8 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 - Replacing the variable `HELP` with and empty string reduces the `char count to 2769`, this is usefull for the ones with few chars while we work to reduce the size;
 - Readable code, with little nesting;
 - No external dependencies;
-- Error and TypeError checking for all arguments.
+- Error and TypeError checking for all arguments;
+- Script protection to only run if user is allowed, needs to be uncommented.
 
 ## Initial Investors
 - Bowkill
