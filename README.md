@@ -1,7 +1,7 @@
 # hackmud-dbms
 A Free and Open Source Database Management Script (FODBMS) for hackmud.
 
-<img width="1241" height="787" alt="image" src="https://github.com/user-attachments/assets/ceba97f7-a7cd-4091-a5c6-5490ee9fb2a6" />
+<img width="1239" height="783" alt="imagem" src="https://github.com/user-attachments/assets/54ba8610-4c45-4442-a522-ec1bcf6c610a" />
 
 ## Main Freatures
 - All find methods, `first, array, count, distinct` and all their parameters, `query, projection, skip, limit, sort` (some methods arent compatible with some parameters by disign);
