@@ -3,16 +3,16 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 
 <img width="1239" height="783" alt="imagem" src="https://github.com/user-attachments/assets/54ba8610-4c45-4442-a522-ec1bcf6c610a" />
 
-## Main Freatures
-- All find methods, `first, array, count, distinct` and all their parameters, `query, projection, skip, limit, sort` (some methods arent compatible with some parameters by disign);
+## Main Features
+- All find methods, `first, array, count, distinct` and all their parameters, `query, projection, skip, limit, sort` (some methods aren't compatible with some parameters by design);
 - Insert single or multiple documents (asks for confirmation);
 - Removes single or multiple documents (asks for confirmation), but doesn't allow for the complete deletion of the database (use nuke for that);
-- All ways to update documents, `update, update only 1, update with upsert` (asks for confirmation);
-- Easy way to see the specifications/geral info of the database. (Requires the documents to have a `collection` property);
+- All functions to update documents, `update, update only 1, update with upsert` (asks for confirmation);
+- Easy way to see the number of documents of the database by collection. (Requires the documents to have a `collection` property);
 - A way to delete everything in the database with double confirmation, first normal and security message;
-- Arguemnts market with `*` can be omitted, because they can be ignored or have default values assigned;
+- Arguments market with `*` can be omitted, because they can be ignored or have default values assigned;
 - Letters between `[]` represent aliases for `cmds`;
-- Script protection to only run if user is allowed, needs to be uncommented;
+- Script protection to only run if the user is allowed, needs to be uncommented;
 
 ## Extra Info
 - `Char Count: 4308` -> `Objective: 2000`;
