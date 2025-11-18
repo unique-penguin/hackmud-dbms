@@ -1,4 +1,4 @@
-# hackmud-dbms [v2.0.0] [Pr2]
+# hackmud-dbms
 A Free and Open Source Database Management Script (FODBMS) for hackmud.
 
 <img width="1241" height="787" alt="image" src="https://github.com/user-attachments/assets/ceba97f7-a7cd-4091-a5c6-5490ee9fb2a6" />
