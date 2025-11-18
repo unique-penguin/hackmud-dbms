@@ -13,7 +13,7 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 - Arguemnts market with `*` can be omitted, because they can be ignored or have default values assigned;
 
 ## Extra Info
-- `Char Count: 4260` -> `Objective: 2000`;
+- `Char Count: 4259` -> `Objective: 2000`;
 - Replacing the variable `HELP` with and empty string reduces the `char count to 2769`, this is usefull for the ones with few chars while we work to reduce the size;
 - Readable code, with little nesting;
 - No external dependencies;
