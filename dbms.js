@@ -48,7 +48,7 @@ function(C, A) // cmd:""
 		"\n║ #`Nupdate`: `V<{`obj/MongoDB obj`V}>`"+
 		"\n║ #`Nconfirm`: `Vtrue`"+
 		"\n║"+
-		"\n╠`V\"specifications\"` `v[specs]`"+
+		"\n╠`V\"specifications\"` `v[specs]` - Shows the number of documents by collection"+
 		"\n║"+
 		"\n║`V\"nuke\"` `w(CAUTION)` - Deletes everything in the database \\(T^T)/"+
 		"\n╚ #`Nconfirm`:`Vtrue`\n"+
