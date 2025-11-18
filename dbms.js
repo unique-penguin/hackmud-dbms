@@ -52,7 +52,7 @@ function(C, A) // cmd:""
 		"\n║"+
 		"\n║`V\"nuke\"` `w(CAUTION)` - Deletes everything in the database \\(T^T)/"+
 		"\n╚ #`Nconfirm`:`Vtrue`\n"+
-		"\n`A(* - optional)`"
+		"\n`A(* - optional) ([f] - aliase)`"
 
 
 
