@@ -1,4 +1,4 @@
-function(C, A) // cmd:"cmd"
+function(C, A) // cmd:""
 {	
 	// If you would like to make this a PUBLIC SCRIPT to have it function as a interface for a
 	// multi-user database uncomment the lines bellow and change the allowed_users varibale
