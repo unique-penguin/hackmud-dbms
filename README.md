@@ -24,5 +24,5 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 - If you don't have enougth chars you can replace the varible `HELP` with an empty string and use the image above as a guide;
 
 ## Initial Investors
-- Bowkill
-- Shira
+- bowkill
+- shira
