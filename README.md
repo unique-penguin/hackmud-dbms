@@ -19,6 +19,6 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 - No external dependencies;
 - Error and TypeError checking for all arguments.
 
-### Initial Investors
+## Initial Investors
 - Bowkill
 - Shira
