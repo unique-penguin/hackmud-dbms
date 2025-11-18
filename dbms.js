@@ -3,7 +3,6 @@ function(C, A) // cmd:"cmd"
 	var confirm = {ok:false, msg:"Confirm with confirm:true"}
 
 	var HELP = "`HDatabase Management Script [v2.0.0]`"+
-		"\nDependencies: scripts.lib\n"+
 		"\nScript Arguments:"+
 		"\n#`Ncmd`:"+
 		"\n╠`V\"find\"` `v[f]` - Finds a/multiple document(s) in the database"+
