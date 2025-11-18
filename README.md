@@ -4,7 +4,7 @@ A Free and Open Source Database Management Script (FODBMS) for hackmud.
 <img width="1241" height="787" alt="image" src="https://github.com/user-attachments/assets/ceba97f7-a7cd-4091-a5c6-5490ee9fb2a6" />
 
 ## Main Freatures
-- All find methods, `first, array, count, distinct` and all their parameters `query, projection, skip, limit, sort` (some methods arent compatible with some parameters by disign);
+- All find methods, `first, array, count, distinct` and all their parameters, `query, projection, skip, limit, sort` (some methods arent compatible with some parameters by disign);
 - Insert single or multiple docuemnts (asks for confirmation);
 - Removes sngle or multiple documents (asks for confirmation), but doesn't allow for the complete deletion of the database (use nuke for that);
 - All ways to update documents, `update, update only 1, update with upsert` (asks for confirmation);
