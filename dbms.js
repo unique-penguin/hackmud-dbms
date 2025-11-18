@@ -136,7 +136,6 @@ function(C, A) // cmd:"cmd"
 		}
 
 		return #db.i(A.doc)
-
 	}
 
 
