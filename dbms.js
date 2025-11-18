@@ -1,5 +1,14 @@
 function(C, A) // cmd:"cmd"
 {	
+	// If you would like to make this a PUBLIC SCRIPT to have it function as a interface for a
+	// multi-user database uncomment the lines bellow and change the allowed_users varibale
+
+	//var allowed_users = ["trust","mallory"]
+	//if(!allowed_users.includes(C.caller)){
+	//	throw new Error ("`DWhat are you doing` `A"+C.caller+"``D?`")
+	//}
+
+
 	var confirm = {ok:false, msg:"Confirm with confirm:true"}
 
 	var HELP = "`HDatabase Management Script [v2.0.0]`\n"+
